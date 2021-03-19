@@ -13,3 +13,6 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+p {
+    font-size: 0.7em; /* 14px/16=0.875em */
+  }

@@ -21,7 +21,7 @@ class App extends Component   {
     super(props);
   this.state={
     multerImage:DefaultImg,
-    message:"no text",
+    message:"",
     name:"",
     fatherName:'',
     dob:'',
@@ -36,7 +36,7 @@ setDefaultImage(uploadType) {
   } 
 }
 splitLines(t) { return t.split(/\r\n|\r|\n/); }
-
+ 
 
 uploadImage(e){
   
@@ -97,6 +97,7 @@ render(){
           </Typography>
         </Toolbar>
       </AppBar>
+      </header>
       <p></p>
       <p></p>
       <p></p>
@@ -114,7 +115,16 @@ render(){
       </label>
         </section>
       <p><img src={this.state.multerImage} alt="pancard" className="process__image" height='210' /></p>
-        
+      
+      
+      <div>
+      OCR Output:  
+        {this.splitLines(this.state.message).map((item) =>
+        <p key={item.something_unique} >{item}</p>
+        )}
+      
+      </div>
+      
         
         
        
@@ -151,10 +161,14 @@ render(){
     </Card>
     </Box>
     </Grid>
+
+    
     </Grid>
+
     </div>
     </div>
-      </header>
+      
+      
     </div>
   );
 }
